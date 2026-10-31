@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURORA Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Theme toggle (moon / sun) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">🌙</button>
+
+    <div class="calculator glass">
+        <!-- Branding -->
+        <div class="branding">AURORA CALCULATOR</div>
+        <!-- Previous operation line -->
+        <div id="prev-expression" class="prev-expression"></div>
+        <!-- Main display and copy button -->
+        <div class="display-wrapper">
+            <input type="text" id="display" class="display" readonly aria-label="Result" />
+            <button id="copy-result" class="copy-btn" aria-label="Copy result">📋</button>
+        </div>
+        <!-- Memory controls -->
+        <div class="memory-buttons">
+            <button class="btn" data-action="memory-clear">MC</button>
+            <button class="btn" data-action="memory-recall">MR</button>
+            <button class="btn" data-action="memory-add">M+</button>
+            <button class="btn" data-action="memory-subtract">M-</button>
+        </div>
+        <!-- Calculator keys -->
+        <div class="buttons">
+            <button class="btn" data-action="clear">AC</button>
+            <button class="btn" data-action="delete">DEL</button>
+            <button class="btn" data-action="percentage">%</button>
+            <button class="btn operator" data-action="/">÷</button>
+
+            <button class="btn" data-action="7">7</button>
+            <button class="btn" data-action="8">8</button>
+            <button class="btn" data-action="9">9</button>
+            <button class="btn operator" data-action="*">×</button>
+
+            <button class="btn" data-action="4">4</button>
+            <button class="btn" data-action="5">5</button>
+            <button class="btn" data-action="6">6</button>
+            <button class="btn operator" data-action="-">−</button>
+
+            <button class="btn" data-action="1">1</button>
+            <button class="btn" data-action="2">2</button>
+            <button class="btn" data-action="3">3</button>
+            <button class="btn operator" data-action="+">+</button>
+
+            <button class="btn" data-action="+/-">±</button>
+            <button class="btn" data-action="0">0</button>
+            <button class="btn" data-action=".">.</button>
+            <button class="btn operator" data-action="=">=</button>
+        </div>
+        <button id="history-toggle" class="history-toggle" aria-label="Toggle history">📜</button>
+    </div>
+
+    <!-- History panel (initially hidden) -->
+    <div id="history-panel" class="history-panel hidden">
+        <div class="history-header">
+            <h2>History</h2>
+            <button id="clear-history" class="clear-history" aria-label="Clear history">✖</button>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
